@@ -27,4 +27,4 @@ Route::get('/admin/products/create', 'ProductController@create'); //Registar pro
 Route::post('/admin/products', 'ProductController@store'); //volver a leer la lista de productos REGISTRAR
 
 Route::get('/admin/products/{id}/edit', 'ProductController@edit')->name('EditarRegistro');//Formulario de Edicion // EL NAME ES PARA laravel colective
-Route::post('/admin/products/{id}', 'ProductController@update')->name('productos.update'); //Formulario Actualizar
+Route::put('/admin/products/{id}', 'ProductController@update')->name('productos.update'); //Formulario Actualizar

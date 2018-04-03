@@ -38,7 +38,24 @@
             <div class="collapse navbar-collapse" id="navigation-example">
                 <ul class="nav navbar-nav navbar-right">
                    @guest
-                            <li><a href="">Notificaciones</a></li>
+                   <li><a href="">Notificaciones</a></li>
+                   <li class="dropdown">
+                       <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                             Notifications <span class="badge">{{--{{count(Auth::user()->unreadNotifications)}} --}}10</span> 
+                       </a>
+                    
+                       <ul class="dropdown-menu" role="menu">
+                           <li>
+                             {{--    @foreach (Auth::user()->unreadNotifications as $notification)--}}
+                                   <a href="{{--{{ route('posts.show', $notification->data['post']['id']) }}--}}"><i>{{--{{ $notification->data["user"]["name"] }}--}}</i>*Tienes una Notificaciones<b>{{--{{ $notification->data["post"]["title"] }}--}}</b></a>
+                               {{--  @endforeach --}}
+                           </li>
+                       </ul>
+                   </li>
+                </li>
+
+
+
                             <li><a href="{{ route('login') }}">Ingresar</a></li>
                             <li><a href="{{ route('register') }}">Registro</a></li>
                         @else
