@@ -178,6 +178,7 @@ return [
         App\Providers\RouteServiceProvider::class,
 
         Collective\Html\HtmlServiceProvider::class,  //LARAVEL COLECTIVE
+         UxWeb\SweetAlert\SweetAlertServiceProvider::class,
     ],
 
     /*
@@ -229,7 +230,7 @@ return [
 
         'Form' => Collective\Html\FormFacade::class, //LARAVEL COLECTIVE
         'Html' => Collective\Html\HtmlFacade::class, //LARAVEL COLECTIVE
-
+        'Alert' => UxWeb\SweetAlert\SweetAlert::class,
     ],
 
 ];

@@ -7,6 +7,7 @@ use App\Producto;
 use App\Categoria;
 use App\ProductImage;
 use DB;
+use Alert;
 
 
 class ProductController extends Controller
@@ -91,14 +92,15 @@ class ProductController extends Controller
     public function update(Request $request, $id){
         
         //return view();  // resgistart un nuevo producto a la base de datos
-        dd($request);
+       // dd($request);
+        
+       $Producto = Producto::find($id );
 
-        $Categoria = Categoria::find($id);
+        $Categoria = Categoria::find($Producto->category_id);
         $Categoria->name = $request->namec;  //el namec es el nombre dl input
         $Categoria->save();   // para guardar el registro
         $idCategoria = $Categoria->id; //sacar el ultimo id de la insersion de categoria
 
-        $Producto = Producto::find($idCategoria );
         $Producto->name = $request->input('name');
         $Producto->description = $request->input('description');
         $Producto->long_description = $request->descripcionl;
@@ -108,10 +110,10 @@ class ProductController extends Controller
         $idProducto = $Producto->id;
 
 
-        $Imagen = ProductImage::find($idProducto);
-        $Imagen->product_id = $idProducto;
-        $Imagen->save();  
-
+        // $Imagen = ProductImage::find($idProducto);
+        // $Imagen->product_id = $idProducto;
+        // $Imagen->save();  
+        Alert::success('Registro modificado con exito','Hecho');
         return redirect('/admin/products');
 
     }

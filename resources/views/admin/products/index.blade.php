@@ -20,7 +20,7 @@
                             <thead>
                                 <tr>
                                     <th class="text-center">#</th>
-                                    <th>Nombre</th>
+                                    <th>Nombre PRODUCTO</th>
                                     <th class="col-md-4">Descripcion</th>
                                     <th class="text-right">Categoria</th>
                                     <th class="text-right">Precio</th>
